@@ -1,0 +1,50 @@
+[
+    {
+        "agent": "Bismuth",
+        "run_date": "2025-05-27",
+        "needle_in_haystack": [
+            "https://github.com/open-telemetry/opentelemetry-go/pull/2285",
+            "https://github.com/prevwong/craft.js/pull/131",
+            "https://github.com/codeclysm/extract/commit/4a98568021b8e289345c7f526ccbd7ed732cf286",
+            "https://github.com/ParisNeo/lollms/commit/295d4a9d00fc1b02d1359fc13794828bb56ee22d",
+            "https://github.com/chatchat-space/Langchain-Chatchat/pull/4009",
+            "https://github.com/panjf2000/ants/pull/360",
+            "https://github.com/reactjs/react-modal/pull/778",
+            "https://github.com/usememos/memos/pull/870",
+            "https://github.com/nats-io/nats-server/pull/1792",
+            "https://github.com/usememos/memos/pull/875"
+        ],
+        "remediated": [
+            "https://github.com/open-telemetry/opentelemetry-go/pull/2285",
+            "https://github.com/prevwong/craft.js/pull/131",
+            "https://github.com/codeclysm/extract/commit/4a98568021b8e289345c7f526ccbd7ed732cf286",
+            "https://github.com/ParisNeo/lollms/commit/295d4a9d00fc1b02d1359fc13794828bb56ee22d",
+            "https://github.com/chatchat-space/Langchain-Chatchat/pull/4009",
+            "https://github.com/panjf2000/ants/pull/360",
+            "https://github.com/reactjs/react-modal/pull/778",
+            "https://github.com/usememos/memos/pull/870",
+            "https://github.com/nats-io/nats-server/pull/1792",
+            "https://github.com/usememos/memos/pull/875"
+        ],
+        "pr_review": [
+            "https://github.com/badges/shields/pull/1223",
+            "https://github.com/BurntSushi/toml/commit/0e879cbdab1075e5622c5c91581eb5e417e6fc1a",
+            "https://github.com/containerd/containerd/commit/aedb079bf18f1f913b705d9b791beebcf1962cdd",
+            "https://github.com/cri-o/cri-o/pull/8968",
+            "https://github.com/curlconverter/curlconverter/commit/982cf32cefc95b7b08319205a85364174db11962",
+            "https://github.com/deluge-torrent/deluge/pull/439",
+            "https://github.com/fastenhealth/fasten-onprem/pull/444",
+            "https://github.com/inertiajs/inertia/pull/1985",
+            "https://github.com/mgechev/revive/pull/1101",
+            "https://github.com/nats-io/nats-server/pull/1792",
+            "https://github.com/ParisNeo/lollms/commit/295d4a9d00fc1b02d1359fc13794828bb56ee22d",
+            "https://github.com/prevwong/craft.js/pull/131",
+            "https://github.com/reactjs/react-modal/pull/778",
+            "https://github.com/sphinx-doc/sphinx/pull/8957",
+            "https://github.com/wandb/weave/pull/1657",
+            "https://github.com/websockets/ws/pull/2231",
+            "https://github.com/zotero/reader/commit/9857a5960d6a6697332c905057434904df54df9d"
+        ],
+        "true_positive_rate": 0.25
+    }
+]
