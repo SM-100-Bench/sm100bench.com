@@ -92,42 +92,34 @@ export default function SM100Dashboard() {
                       {result.run_date}
                     </TableCell>
                     <TableCell className="text-gray-500 dark:text-gray-300">
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
-                        {result.needle_in_haystack.length}
-                      </span>
+                      {result.needle_in_haystack.length}
                     </TableCell>
                     <TableCell className="text-gray-500 dark:text-gray-300">
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
-                        {result.pr_review.length}
-                      </span>
+                      {result.pr_review.length}
                     </TableCell>
                     <TableCell className="text-gray-500 dark:text-gray-300">
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">
-                        {(result.true_positive_rate * 100).toFixed(1)}%
-                      </span>
+                      {(result.true_positive_rate * 100).toFixed(1)}%
                     </TableCell>
                     <TableCell className="text-gray-500 dark:text-gray-300">
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200">
-                        {result.remediated.length}
-                      </span>
+                      {result.remediated.length}
                     </TableCell>
                   </TableRow>
                   {expandedRow === index && (
                     <TableRow className="bg-gray-50 dark:bg-gray-700">
                       <TableCell colSpan={6} className="p-6">
-                        <div className="space-y-4">
-                          <div>
+                        <div className="grid grid-cols-3 gap-4 h-96">
+                          <div className="flex flex-col">
                             <h4 className="text-sm font-medium text-gray-900 dark:text-white mb-2">
                               Needle in Haystack Results ({result.needle_in_haystack.length})
                             </h4>
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+                            <div className="flex-1 overflow-y-auto border border-gray-200 dark:border-gray-600 rounded-md p-2 space-y-1">
                               {result.needle_in_haystack.map((url, urlIndex) => (
                                 <a
                                   key={urlIndex}
                                   href={url}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="text-xs text-blue-600 dark:text-blue-400 hover:underline break-all"
+                                  className="block text-xs text-blue-600 dark:text-blue-400 hover:underline break-all"
                                 >
                                   {url.replace('https://github.com/', '')}
                                 </a>
@@ -135,18 +127,18 @@ export default function SM100Dashboard() {
                             </div>
                           </div>
                           
-                          <div>
+                          <div className="flex flex-col">
                             <h4 className="text-sm font-medium text-gray-900 dark:text-white mb-2">
                               PR Review Results ({result.pr_review.length})
                             </h4>
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+                            <div className="flex-1 overflow-y-auto border border-gray-200 dark:border-gray-600 rounded-md p-2 space-y-1">
                               {result.pr_review.map((url, urlIndex) => (
                                 <a
                                   key={urlIndex}
                                   href={url}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="text-xs text-blue-600 dark:text-blue-400 hover:underline break-all"
+                                  className="block text-xs text-blue-600 dark:text-blue-400 hover:underline break-all"
                                 >
                                   {url.replace('https://github.com/', '')}
                                 </a>
@@ -154,18 +146,18 @@ export default function SM100Dashboard() {
                             </div>
                           </div>
                           
-                          <div>
+                          <div className="flex flex-col">
                             <h4 className="text-sm font-medium text-gray-900 dark:text-white mb-2">
                               Remediated Issues ({result.remediated.length})
                             </h4>
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+                            <div className="flex-1 overflow-y-auto border border-gray-200 dark:border-gray-600 rounded-md p-2 space-y-1">
                               {result.remediated.map((url, urlIndex) => (
                                 <a
                                   key={urlIndex}
                                   href={url}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="text-xs text-blue-600 dark:text-blue-400 hover:underline break-all"
+                                  className="block text-xs text-blue-600 dark:text-blue-400 hover:underline break-all"
                                 >
                                   {url.replace('https://github.com/', '')}
                                 </a>
