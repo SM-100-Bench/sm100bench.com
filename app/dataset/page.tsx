@@ -15,7 +15,7 @@ interface DatasetEntry {
   language: string;
   introduced_by: string | null;
   implication: string;
-  taxonomy: string | number; // Can be NaN
+  taxonomy: string;
   severity: string[];
   domain_expertise: string[];
   difficulty_to_find: string[];
@@ -179,7 +179,7 @@ export default function DatasetViewer() {
       }
 
       // Taxonomy filter
-      if (filters.taxonomy !== 'all' && String(item.taxonomy) !== filters.taxonomy) {
+      if (filters.taxonomy !== 'all' && item.taxonomy !== filters.taxonomy) {
         return false;
       }
 

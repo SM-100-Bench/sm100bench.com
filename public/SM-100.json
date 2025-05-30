@@ -466,7 +466,7 @@
     "language": "TS",
     "introduced_by": "f7f7d8917737612fc17261bdb1952d66b548db8f",
     "implication": "Exception",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low",
       "Low"
@@ -486,7 +486,7 @@
     "language": "TS",
     "introduced_by": "63c24ff5b50d92c5a83b4c7c6b3bd68c7e6e4e2f",
     "implication": "Unexpected behavior",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low",
       "Low"
@@ -506,7 +506,7 @@
     "language": "TS",
     "introduced_by": "c4ab6cfa8d5b4d447d9d554282e501573dbfe473",
     "implication": "Unexpected behavior",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low",
       "Low"
@@ -526,7 +526,7 @@
     "language": "TS",
     "introduced_by": "forever",
     "implication": "Security",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "High",
       "High"
@@ -546,7 +546,7 @@
     "language": "TS",
     "introduced_by": "995a016f6275a334ad816d90123208f6077af139",
     "implication": "Unexpected behavior",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low",
       "Low"
@@ -566,7 +566,7 @@
     "language": "TS",
     "introduced_by": "92d869695978dc73350be6590456c83ac9e80593",
     "implication": "Exception",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "High",
       "High"
@@ -586,7 +586,7 @@
     "language": "TS",
     "introduced_by": null,
     "implication": "Resource leak",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Medium",
       "Medium"
@@ -606,7 +606,7 @@
     "language": "Python",
     "introduced_by": "1219b7e83bd824acbdca07c8b4ac6a539c239335",
     "implication": "Unexpected behavior",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low",
       "Low"
@@ -626,7 +626,7 @@
     "language": "JS",
     "introduced_by": null,
     "implication": "Unexpected behavior",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low",
       "Low"
@@ -646,7 +646,7 @@
     "language": "JS",
     "introduced_by": "4af93abe0a9e77b3757b638140b4051118344f98",
     "implication": "Exception",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low",
       "Low"
@@ -666,7 +666,7 @@
     "language": "JS",
     "introduced_by": "53c3987b3cc34e95eb396b26fc9b051276e2f6f9",
     "implication": "Unexpected behavior",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low",
       "Low"
@@ -686,7 +686,7 @@
     "language": "JS",
     "introduced_by": "de14816926c57cade54e4f15856f02d4c1006671",
     "implication": "Exception",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low",
       "Low"
@@ -706,7 +706,7 @@
     "language": "TS",
     "introduced_by": "bf4e38b2ee24859257707e83256a5e00aa6381aa",
     "implication": "Unexpected behavior",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Medium",
       "Medium"
@@ -726,7 +726,7 @@
     "language": "TS",
     "introduced_by": "7924ac5829f41f15592b86ff7c9456c7196ee55a",
     "implication": "Unexpected behavior",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low",
       "Low"
@@ -746,7 +746,7 @@
     "language": "Go",
     "introduced_by": null,
     "implication": "Exception",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Medium",
       "Medium"
@@ -766,7 +766,7 @@
     "language": "Go",
     "introduced_by": "95c3aa6629cccfb6b3589c1abea6d24a2e82bfe5",
     "implication": "Unexpected behavior",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low",
       "Low"
@@ -786,7 +786,7 @@
     "language": "Go",
     "introduced_by": "d8af0ab587904647b4b53fc0ca1be10ff84d7a60",
     "implication": "Exception",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Medium",
       "Medium"
@@ -806,7 +806,7 @@
     "language": "Go",
     "introduced_by": null,
     "implication": "Exception",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low",
       "Low"
@@ -826,7 +826,7 @@
     "language": "Go",
     "introduced_by": "(change in go stdlib)",
     "implication": "Exception",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Medium"
     ],
@@ -844,7 +844,7 @@
     "language": "Go",
     "introduced_by": "4a1aee1ae0188191fc97bb732727820260770d7c",
     "implication": "Exception",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "High"
     ],
@@ -862,7 +862,7 @@
     "language": "Go",
     "introduced_by": "90703756d49acbd82b0e4cca0eec13bcc68e2d2c",
     "implication": "Unexpected behavior",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low"
     ],
@@ -880,7 +880,7 @@
     "language": "Go",
     "introduced_by": "cb3936a4994cfc7dd32f0535f88cfae567be0195",
     "implication": "Unexpected behavior",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low"
     ],
@@ -898,7 +898,7 @@
     "language": "Go",
     "introduced_by": "56702bd8d7e6ea3e1b8d4e6ca377b1da8d89cb8a",
     "implication": "Exception",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Medium"
     ],
@@ -916,7 +916,7 @@
     "language": "Go",
     "introduced_by": "cba849dfb19f13d9d0dad03d5f87d8b6e9c78ce4",
     "implication": "Exception",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low"
     ],
@@ -934,7 +934,7 @@
     "language": "Go",
     "introduced_by": "174d804f4a9bdcf95b1dc8d08cfed7cfac3ab135",
     "implication": "Exception",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low"
     ],
@@ -952,7 +952,7 @@
     "language": "Go",
     "introduced_by": null,
     "implication": "Unexpected behavior",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low"
     ],
@@ -970,7 +970,7 @@
     "language": "Python",
     "introduced_by": "5f194f73bf9d789cb2b1eed3c48243d13f9b0a54",
     "implication": "Unexpected behavior",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Medium"
     ],
@@ -988,7 +988,7 @@
     "language": "Python",
     "introduced_by": "860fdf6c8b0eb88b9668153fdf2bf0352ec3152a",
     "implication": "Unexpected behavior",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Medium"
     ],
@@ -1006,7 +1006,7 @@
     "language": "Python",
     "introduced_by": "efe16602580d47ef5cb9787f977a65a5791ea024",
     "implication": "Hang",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Medium"
     ],
@@ -1024,7 +1024,7 @@
     "language": "Python",
     "introduced_by": null,
     "implication": "Unexpected behavior",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Medium"
     ],
@@ -1042,7 +1042,7 @@
     "language": "Python",
     "introduced_by": "1b009a4b035244bd6a0b48bc4dc945fd3b4236ef",
     "implication": "Exception",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low"
     ],
@@ -1060,7 +1060,7 @@
     "language": "Python",
     "introduced_by": "9c710ee906afcaacfd8e67b6d9e26734c1114e26",
     "implication": "Hang",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Medium"
     ],
@@ -1078,7 +1078,7 @@
     "language": "Go",
     "introduced_by": null,
     "implication": "Exception",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Medium"
     ],
@@ -1096,7 +1096,7 @@
     "language": "Python",
     "introduced_by": "051cc2d1a6400ae6df914f19d6c7b7b46ac2c7fd",
     "implication": "Exception",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low"
     ],
@@ -1114,7 +1114,7 @@
     "language": "JS",
     "introduced_by": "77307e7b3bc76714864e83aafbab3bc25717380a",
     "implication": "Resource leak",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Medium"
     ],
@@ -1132,7 +1132,7 @@
     "language": "JS",
     "introduced_by": "88938272377e27007315fbacae2afae842d8ef61",
     "implication": "Security",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Medium"
     ],
@@ -1150,7 +1150,7 @@
     "language": "JS",
     "introduced_by": null,
     "implication": "Resource leak",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low"
     ],
@@ -1168,7 +1168,7 @@
     "language": "JS",
     "introduced_by": "17c31b7e2874fb1b425ffcbd4ab7d665608d1eb8",
     "implication": "Unexpected behavior",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Medium"
     ],
@@ -1186,7 +1186,7 @@
     "language": "JS",
     "introduced_by": "f4d0e33dac270ce21df09a96a39f50e16d6354db",
     "implication": "Unexpected behavior",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low"
     ],
@@ -1204,7 +1204,7 @@
     "language": "JS",
     "introduced_by": "607b32d857eac4315407d428a3245e971b212490",
     "implication": "Security",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Medium"
     ],
@@ -1222,7 +1222,7 @@
     "language": "TS",
     "introduced_by": "a3666c0597376e14331ec1cf4a7c27ec456c8eef",
     "implication": "Unexpected behavior",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low"
     ],
@@ -1240,7 +1240,7 @@
     "language": "TS",
     "introduced_by": "d7c1ef4be11ac0251f026c755039bccc05818303",
     "implication": "Unexpected behavior",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low"
     ],
@@ -1258,7 +1258,7 @@
     "language": "TS",
     "introduced_by": "4110f80092aa6b4c1f199a22a7144ab1220dceeb",
     "implication": "Unexpected behavior",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Medium"
     ],
@@ -1276,7 +1276,7 @@
     "language": "TS",
     "introduced_by": "83f386950415a0d839ce95ba080c9ed36c4413b7",
     "implication": "Exception",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "High"
     ],
@@ -1294,7 +1294,7 @@
     "language": "TS",
     "introduced_by": "092f059694179c67f6536eed2c5edc42ebb48b52",
     "implication": "Resource leak",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low"
     ],
@@ -1312,7 +1312,7 @@
     "language": "TS",
     "introduced_by": null,
     "implication": "Unexpected behavior",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low"
     ],
@@ -1330,7 +1330,7 @@
     "language": "Go",
     "introduced_by": "04f1e832d5fd00ae79f93055af79221dde30e742",
     "implication": "Data loss",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "High"
     ],
@@ -1348,7 +1348,7 @@
     "language": "Go",
     "introduced_by": "9cb08a3cf5b3e67402edb2a10ff63df2258bc731",
     "implication": "Data loss",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "High"
     ],
@@ -1366,7 +1366,7 @@
     "language": "Go",
     "introduced_by": "0ee2433c940dafcba2bbd866c057b08a9cb2b2d4",
     "implication": "Exception",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "High"
     ],
@@ -1384,7 +1384,7 @@
     "language": "Go",
     "introduced_by": "c42e18a4c4211638a166ebf6c0bbe1f93b50eabf",
     "implication": "Security",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Medium"
     ],
@@ -1402,7 +1402,7 @@
     "language": "Go",
     "introduced_by": "472639dadcd2b7f2cec6e1e5401254653e6f2434",
     "implication": "Security",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Medium"
     ],
@@ -1420,7 +1420,7 @@
     "language": "Python",
     "introduced_by": "05cd6e4fd71866b6328ee669b7823def671c1a42",
     "implication": "Security",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "High"
     ],
@@ -1438,7 +1438,7 @@
     "language": "Python",
     "introduced_by": "bff378d423be89164ccc2e1a22caded5254c634f",
     "implication": "Security",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "High"
     ],
@@ -1456,7 +1456,7 @@
     "language": "Python",
     "introduced_by": "5e60a753c2297167c951fc32cef7daaa3618aa7b",
     "implication": "Security",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "High"
     ],
@@ -1474,7 +1474,7 @@
     "language": "Python",
     "introduced_by": "2a8515d2e53a2be475d9df3fe44e308501201a95",
     "implication": "Security",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Medium"
     ],
@@ -1492,7 +1492,7 @@
     "language": "Go",
     "introduced_by": "5d7ecfe4b230e86d4beb78f66f8d65038c67d397",
     "implication": "Security",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Medium"
     ],
@@ -1510,7 +1510,7 @@
     "language": "Python",
     "introduced_by": "07147110a19b8baedd72c3f78ac8f0686fc50eb6",
     "implication": "Unexpected behavior",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low"
     ],
@@ -1528,7 +1528,7 @@
     "language": "Python",
     "introduced_by": "7c23cbb62f3268dfe203641e7da7fd27133f6b21",
     "implication": "Hang",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low"
     ],
@@ -1546,7 +1546,7 @@
     "language": "Python",
     "introduced_by": "ef59aa0227bf463f0ed3d752b26db9b3acc64afb",
     "implication": "Unexpected behavior",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low"
     ],
@@ -1564,7 +1564,7 @@
     "language": "Python",
     "introduced_by": "c86b09b3c67a437f8851d3be9232b0a1c8585e20",
     "implication": "Hang",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low"
     ],
@@ -1582,7 +1582,7 @@
     "language": "Python",
     "introduced_by": "66ffcbc4c59e41327be1a2b5ef65727bf0314aa9",
     "implication": "Exception",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low"
     ],
@@ -1600,7 +1600,7 @@
     "language": "Python",
     "introduced_by": "1f23a5c369ba58c6ec5ab806e25c63dd615327dd",
     "implication": "Hang",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low"
     ],
@@ -1618,7 +1618,7 @@
     "language": "JS",
     "introduced_by": "83f5f7243172a017adcf6a7faa5547c55982c57b",
     "implication": "Hang",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low"
     ],
@@ -1636,7 +1636,7 @@
     "language": "JS",
     "introduced_by": "3b1fa420d1069c7d06fc8a35b4e4fc90f6b0576a",
     "implication": "Unexpected behavior",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low"
     ],
@@ -1654,7 +1654,7 @@
     "language": "TS",
     "introduced_by": "0b949a14c07c65a44e4ae2c502863238f45cec94",
     "implication": "Unexpected behavior",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low"
     ],
@@ -1672,7 +1672,7 @@
     "language": "TS",
     "introduced_by": "8ddc6d9878a5ec2361fa96fd111441af94043fc3",
     "implication": "Unexpected behavior",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Medium"
     ],
@@ -1690,7 +1690,7 @@
     "language": "Go",
     "introduced_by": "048f401df1a0fc4a5a3620ae71fcf25c700b6a4d",
     "implication": "Resource leak",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Medium"
     ],
@@ -1708,7 +1708,7 @@
     "language": "Go",
     "introduced_by": "5bbdfe776c9e96280648fe0d27476174057ffdb4",
     "implication": "Unexpected behavior",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Medium"
     ],
@@ -1726,7 +1726,7 @@
     "language": "TS",
     "introduced_by": "5d966d8e0cf8f4eb76c08cfa53f6f93171f81a4c",
     "implication": "Unexpected behavior",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low"
     ],
@@ -1744,7 +1744,7 @@
     "language": "Go",
     "introduced_by": "580d9db85e04f1b63cc2909af50f0ed08afa965f",
     "implication": "Security",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "High"
     ],
@@ -1762,7 +1762,7 @@
     "language": "Go",
     "introduced_by": "91e1487de45720753c9e9e4c02b1bd16b7e452fa",
     "implication": "Security",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low"
     ],
@@ -1780,7 +1780,7 @@
     "language": "Python",
     "introduced_by": "forever",
     "implication": "Unexpected behavior",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low"
     ],
@@ -1798,7 +1798,7 @@
     "language": "Python",
     "introduced_by": "73ec9b0338d25ec9632f0043e084060053577097",
     "implication": "Exception",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low"
     ],
@@ -1816,7 +1816,7 @@
     "language": "JS",
     "introduced_by": "forever aa6520daac705f2374d9b8b37cfb105f26106e5d",
     "implication": "Exception",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Medium"
     ],
@@ -1834,7 +1834,7 @@
     "language": "JS",
     "introduced_by": "forever aa6520daac705f2374d9b8b37cfb105f26106e5d",
     "implication": "Unexpected behavior",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Low"
     ],
@@ -1852,7 +1852,7 @@
     "language": "Go",
     "introduced_by": "8c589e3649fd842d7203d1d86e207acdb1e4f741",
     "implication": "Exception",
-    "taxonomy": NaN,
+    "taxonomy": null,
     "severity": [
       "Medium"
     ],
@@ -1862,29 +1862,5 @@
     "difficulty_to_find": [
       "Medium"
     ]
-  },
-  {
-    "url": NaN,
-    "id": NaN,
-    "source": NaN,
-    "language": NaN,
-    "introduced_by": null,
-    "implication": NaN,
-    "taxonomy": NaN,
-    "severity": [],
-    "domain_expertise": [],
-    "difficulty_to_find": []
-  },
-  {
-    "url": "84 uniq repos",
-    "id": NaN,
-    "source": NaN,
-    "language": NaN,
-    "introduced_by": null,
-    "implication": NaN,
-    "taxonomy": NaN,
-    "severity": [],
-    "domain_expertise": [],
-    "difficulty_to_find": []
   }
 ]
