@@ -24,7 +24,6 @@ interface DatasetEntry {
 interface Filters {
   language: string;
   implication: string;
-  taxonomy: string;
   hasIntroducedBy: boolean;
   minSeverity: number;
   minDomainExpertise: number;
@@ -129,7 +128,6 @@ export default function DatasetViewer() {
   const [filters, setFilters] = useState<Filters>({
     language: 'all',
     implication: 'all',
-    taxonomy: 'all',
     hasIntroducedBy: false,
     minSeverity: 1,
     minDomainExpertise: 1,
@@ -149,20 +147,13 @@ export default function DatasetViewer() {
       });
   }, []);
 
-  const { uniqueLanguages, uniqueImplications, uniqueTaxonomies } = useMemo(() => {
+  const { uniqueLanguages, uniqueImplications } = useMemo(() => {
     const languages = new Set(data.map(item => item.language));
     const implications = new Set(data.map(item => item.implication));
-    const taxonomies = new Set(
-      data
-        .map(item => item.taxonomy)
-        .filter(t => t && typeof t === 'string')
-        .map(t => String(t))
-    );
 
     return {
       uniqueLanguages: Array.from(languages).sort(),
       uniqueImplications: Array.from(implications).sort(),
-      uniqueTaxonomies: Array.from(taxonomies).sort(),
     };
   }, [data]);
 
@@ -178,10 +169,7 @@ export default function DatasetViewer() {
         return false;
       }
 
-      // Taxonomy filter
-      if (filters.taxonomy !== 'all' && item.taxonomy !== filters.taxonomy) {
-        return false;
-      }
+
 
       // Has introduced_by filter
       if (filters.hasIntroducedBy && (!item.introduced_by || item.introduced_by === 'null')) {
@@ -222,7 +210,7 @@ export default function DatasetViewer() {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <div className="flex">
         {/* Sidebar */}
-        <div className="w-80 bg-white dark:bg-gray-800 shadow-lg p-6 space-y-6">
+        <div className="w-80 min-h-screen bg-white dark:bg-gray-800 shadow-lg p-6 space-y-6">
           <div>
             <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
               Filters
@@ -266,25 +254,7 @@ export default function DatasetViewer() {
               </Select>
             </div>
 
-            <Separator className="my-4" />
 
-            {/* Taxonomy Filter */}
-            <div className="space-y-2">
-              <label className="text-sm font-medium">Taxonomy</label>
-              <Select value={filters.taxonomy} onValueChange={(value) => 
-                setFilters(prev => ({ ...prev, taxonomy: value }))
-              }>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select taxonomy" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All Taxonomies</SelectItem>
-                  {uniqueTaxonomies.map(tax => (
-                    <SelectItem key={tax} value={tax}>{tax}</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
 
             <Separator className="my-4" />
 
@@ -298,7 +268,7 @@ export default function DatasetViewer() {
                 }
               />
               <label htmlFor="hasIntroducedBy" className="text-sm font-medium">
-                Has introduced_by commit
+                Has introduction commit
               </label>
             </div>
 
@@ -344,45 +314,43 @@ export default function DatasetViewer() {
 
           <Card>
             <CardContent className="p-0">
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>ID</TableHead>
-                    <TableHead>Language</TableHead>
-                    <TableHead>Implication</TableHead>
-                    <TableHead>Taxonomy</TableHead>
-                    <TableHead>Avg Rating</TableHead>
-                    <TableHead>Introduced By</TableHead>
-                    <TableHead>Source</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {filteredData.map((item) => {
-                    const avgSeverity = calculateAverage(item.severity);
-                    const avgDomainExpertise = calculateAverage(item.domain_expertise);
-                    const avgDifficultyToFind = calculateAverage(item.difficulty_to_find);
+              <div className="overflow-x-auto">
+                <Table className="w-full">
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead className="w-48">ID</TableHead>
+                      <TableHead className="w-32">Language</TableHead>
+                      <TableHead className="w-48">Implication</TableHead>
+                      <TableHead className="w-40">Avg Rating</TableHead>
+                      <TableHead className="w-32">Introduced By</TableHead>
+                      <TableHead className="w-32">Source</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {filteredData.map((item) => {
+                      const avgSeverity = calculateAverage(item.severity);
+                      const avgDomainExpertise = calculateAverage(item.domain_expertise);
+                      const avgDifficultyToFind = calculateAverage(item.difficulty_to_find);
 
-                    return (
-                      <TableRow key={item.id}>
-                        <TableCell>
-                          <a
-                            href={item.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-blue-600 dark:text-blue-400 hover:underline font-medium"
-                          >
-                            {item.id}
-                          </a>
-                        </TableCell>
+                      return (
+                        <TableRow key={item.id}>
+                          <TableCell className="w-48">
+                            <a
+                              href={item.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-600 dark:text-blue-400 hover:underline font-medium block truncate"
+                              title={item.id}
+                            >
+                              {item.id}
+                            </a>
+                          </TableCell>
                         <TableCell>
                           <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded text-sm">
                             {item.language}
                           </span>
                         </TableCell>
                         <TableCell className="text-sm">{item.implication}</TableCell>
-                        <TableCell className="text-sm">
-                          {typeof item.taxonomy === 'string' ? item.taxonomy : 'N/A'}
-                        </TableCell>
                         <TableCell>
                           <div className="space-y-1">
                             <div className="flex items-center space-x-2">
@@ -407,9 +375,10 @@ export default function DatasetViewer() {
                         </TableCell>
                       </TableRow>
                     );
-                  })}
-                </TableBody>
-              </Table>
+                    })}
+                  </TableBody>
+                </Table>
+              </div>
             </CardContent>
           </Card>
         </div>
