@@ -121,7 +121,7 @@ const SliderInput = ({
       </div>
     </div>
   );
-};
+}
 
 export default function DatasetViewer() {
   const [data, setData] = useState<DatasetEntry[]>([]);
@@ -204,7 +204,7 @@ export default function DatasetViewer() {
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
         <div className="flex">
           {/* Sidebar */}
-          <div className="w-50 min-h-screen bg-white dark:bg-gray-800 shadow-lg p-6 space-y-6">
+          <div className="w-80 min-h-screen bg-white dark:bg-gray-800 shadow-lg p-6 space-y-6">
             <div>
               <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
                 Filters
@@ -349,7 +349,7 @@ export default function DatasetViewer() {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <div className="flex">
         {/* Sidebar */}
-        <div className="flex-0 min-h-screen bg-white dark:bg-gray-800 shadow-lg p-6 space-y-6">
+        <div className="w-80 min-h-screen bg-white dark:bg-gray-800 shadow-lg p-6 space-y-6">
           <div>
             <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
               Filters
@@ -441,30 +441,31 @@ export default function DatasetViewer() {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 p-8">
-          <div className="mb-8">
-            <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-              Explore the SM-100 dataset
-            </h1>
-            <p className="text-gray-600 dark:text-gray-400">
-               {filteredData.length} of {data.length} entries shown
-            </p>
-          </div>
+        <div className="flex-1 min-w-0 bg-gray-50 dark:bg-gray-900">
+          <div className="p-8">
+            <div className="mb-6">
+              <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+                Explore the SM-100 dataset
+              </h1>
+              <p className="text-gray-600 dark:text-gray-400">
+                 {filteredData.length} of {data.length} entries shown
+              </p>
+            </div>
 
-          <Card>
-            <CardContent className="p-0">
-              <div className="overflow-x-auto">
-                <Table className="w-full">
-                  <TableHeader>
-                    <TableRow>
-                      <TableHead className="w-48">ID</TableHead>
-                      <TableHead className="w-32">Language</TableHead>
-                      <TableHead className="w-48">Implication</TableHead>
-                      <TableHead className="w-40">Avg Rating</TableHead>
-                      <TableHead className="w-32">Introduced By</TableHead>
-                      <TableHead className="w-32">Source</TableHead>
-                    </TableRow>
-                  </TableHeader>
+            <Card>
+              <CardContent className="p-0">
+                <div className="overflow-x-auto bg-gray-50 dark:bg-gray-900">
+                  <Table className="w-full min-w-max">
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead className="min-w-[200px] max-w-[300px]">ID</TableHead>
+                        <TableHead className="min-w-[100px]">Language</TableHead>
+                        <TableHead className="min-w-[200px] max-w-[300px]">Implication</TableHead>
+                        <TableHead className="min-w-[160px]">Avg Rating</TableHead>
+                        <TableHead className="min-w-[120px]">Introduced By</TableHead>
+                        <TableHead className="min-w-[100px]">Source</TableHead>
+                      </TableRow>
+                    </TableHeader>
                   <TableBody>
                     {filteredData.map((item) => {
                       const avgSeverity = calculateAverage(item.severity);
@@ -473,7 +474,7 @@ export default function DatasetViewer() {
 
                       return (
                         <TableRow key={item.id}>
-                          <TableCell className="w-48">
+                          <TableCell className="min-w-[200px] max-w-[300px]">
                             <a
                               href={item.url}
                               target="_blank"
@@ -484,34 +485,40 @@ export default function DatasetViewer() {
                               {item.id}
                             </a>
                           </TableCell>
-                        <TableCell>
-                          <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded text-sm">
-                            {item.language}
-                          </span>
-                        </TableCell>
-                        <TableCell className="text-sm">{item.implication}</TableCell>
-                        <TableCell>
-                          <div className="space-y-1">
-                            <div className="flex items-center space-x-2">
-                              <span className="text-xs text-gray-500 w-12">Sev:</span>
-                              <StarRating rating={avgSeverity} />
+                          <TableCell className="min-w-[100px]">
+                            <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded text-sm">
+                              {item.language}
+                            </span>
+                          </TableCell>
+                          <TableCell className="min-w-[200px] max-w-[300px] text-sm">
+                            <div className="truncate" title={item.implication}>
+                              {item.implication}
                             </div>
-                            <div className="flex items-center space-x-2">
-                              <span className="text-xs text-gray-500 w-12">Exp:</span>
-                              <StarRating rating={avgDomainExpertise} />
+                          </TableCell>
+                          <TableCell className="min-w-[160px]">
+                            <div className="space-y-1">
+                              <div className="flex items-center space-x-2">
+                                <span className="text-xs text-gray-500 w-12">Sev:</span>
+                                <StarRating rating={avgSeverity} />
+                              </div>
+                              <div className="flex items-center space-x-2">
+                                <span className="text-xs text-gray-500 w-12">Exp:</span>
+                                <StarRating rating={avgDomainExpertise} />
+                              </div>
+                              <div className="flex items-center space-x-2">
+                                <span className="text-xs text-gray-500 w-12">Diff:</span>
+                                <StarRating rating={avgDifficultyToFind} />
+                              </div>
                             </div>
-                            <div className="flex items-center space-x-2">
-                              <span className="text-xs text-gray-500 w-12">Diff:</span>
-                              <StarRating rating={avgDifficultyToFind} />
+                          </TableCell>
+                          <TableCell className="min-w-[120px]">
+                            <GitHubCommitLink hash={item.introduced_by || ''} url={item.url} />
+                          </TableCell>
+                          <TableCell className="min-w-[100px] text-sm text-gray-600 dark:text-gray-400">
+                            <div className="truncate" title={item.source}>
+                              {item.source}
                             </div>
-                          </div>
-                        </TableCell>
-                        <TableCell>
-                          <GitHubCommitLink hash={item.introduced_by || ''} url={item.url} />
-                        </TableCell>
-                        <TableCell className="text-sm text-gray-600 dark:text-gray-400">
-                          {item.source}
-                        </TableCell>
+                          </TableCell>
                       </TableRow>
                     );
                     })}
@@ -520,6 +527,7 @@ export default function DatasetViewer() {
               </div>
             </CardContent>
           </Card>
+          </div>
         </div>
       </div>
     </div>
