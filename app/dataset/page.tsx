@@ -6,6 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Checkbox } from '@/components/ui/checkbox';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
+import { Skeleton } from '@/components/ui/skeleton';
 import { Star } from 'lucide-react';
 
 interface DatasetEntry {
@@ -200,8 +201,146 @@ export default function DatasetViewer() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-lg">Loading SM-100 Dataset...</div>
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+        <div className="flex">
+          {/* Sidebar */}
+          <div className="w-80 min-h-screen bg-white dark:bg-gray-800 shadow-lg p-6 space-y-6">
+            <div>
+              <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                Filters
+              </h2>
+              
+              {/* Language Filter Skeleton */}
+              <div className="space-y-2">
+                <Skeleton className="h-4 w-16" />
+                <Skeleton className="h-10 w-full" />
+              </div>
+
+              <Separator className="my-4" />
+
+              {/* Implication Filter Skeleton */}
+              <div className="space-y-2">
+                <Skeleton className="h-4 w-20" />
+                <Skeleton className="h-10 w-full" />
+              </div>
+
+              <Separator className="my-4" />
+
+              {/* Checkbox Filter Skeleton */}
+              <div className="flex items-center space-x-2">
+                <Skeleton className="h-4 w-4" />
+                <Skeleton className="h-4 w-32" />
+              </div>
+
+              <Separator className="my-4" />
+
+              {/* Slider Skeletons */}
+              <div className="space-y-4">
+                <div className="space-y-2">
+                  <Skeleton className="h-4 w-24" />
+                  <Skeleton className="h-2 w-full" />
+                  <Skeleton className="h-3 w-20" />
+                </div>
+                
+                <Separator className="my-4" />
+                
+                <div className="space-y-2">
+                  <Skeleton className="h-4 w-32" />
+                  <Skeleton className="h-2 w-full" />
+                  <Skeleton className="h-3 w-20" />
+                </div>
+                
+                <Separator className="my-4" />
+                
+                <div className="space-y-2">
+                  <Skeleton className="h-4 w-28" />
+                  <Skeleton className="h-2 w-full" />
+                  <Skeleton className="h-3 w-20" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Main Content */}
+          <div className="flex-1 p-8">
+            <div className="mb-8">
+              <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+                SM-100 Dataset Explorer
+              </h1>
+              <p className="text-gray-600 dark:text-gray-400">
+                Loading dataset...
+              </p>
+            </div>
+
+            <Card>
+              <CardContent className="p-0">
+                <div className="overflow-x-auto">
+                  <Table className="w-full">
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead className="w-48">ID</TableHead>
+                        <TableHead className="w-32">Language</TableHead>
+                        <TableHead className="w-48">Implication</TableHead>
+                        <TableHead className="w-40">Avg Rating</TableHead>
+                        <TableHead className="w-32">Introduced By</TableHead>
+                        <TableHead className="w-32">Source</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {Array.from({ length: 8 }).map((_, index) => (
+                        <TableRow key={index}>
+                          <TableCell className="w-48">
+                            <Skeleton className="h-4 w-36" />
+                          </TableCell>
+                          <TableCell>
+                            <Skeleton className="h-6 w-16 rounded" />
+                          </TableCell>
+                          <TableCell className="w-48">
+                            <Skeleton className="h-4 w-40" />
+                          </TableCell>
+                          <TableCell>
+                            <div className="space-y-1">
+                              <div className="flex items-center space-x-2">
+                                <Skeleton className="h-3 w-8" />
+                                <div className="flex space-x-1">
+                                  <Skeleton className="h-4 w-4" />
+                                  <Skeleton className="h-4 w-4" />
+                                  <Skeleton className="h-4 w-4" />
+                                </div>
+                              </div>
+                              <div className="flex items-center space-x-2">
+                                <Skeleton className="h-3 w-8" />
+                                <div className="flex space-x-1">
+                                  <Skeleton className="h-4 w-4" />
+                                  <Skeleton className="h-4 w-4" />
+                                  <Skeleton className="h-4 w-4" />
+                                </div>
+                              </div>
+                              <div className="flex items-center space-x-2">
+                                <Skeleton className="h-3 w-8" />
+                                <div className="flex space-x-1">
+                                  <Skeleton className="h-4 w-4" />
+                                  <Skeleton className="h-4 w-4" />
+                                  <Skeleton className="h-4 w-4" />
+                                </div>
+                              </div>
+                            </div>
+                          </TableCell>
+                          <TableCell>
+                            <Skeleton className="h-4 w-14" />
+                          </TableCell>
+                          <TableCell>
+                            <Skeleton className="h-4 w-20" />
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
       </div>
     );
   }
