@@ -9,6 +9,7 @@ export default function Navigation() {
   const navItems = [
     { href: '/', label: 'Results', description: 'SM-100 Benchmark Results' },
     { href: '/dataset', label: 'Dataset', description: 'SM-100 Dataset Explorer' },
+    { href: '/about', label: 'About', description: 'About the SM-100 Benchmark' },
   ];
 
   return (

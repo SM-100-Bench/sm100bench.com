@@ -3,6 +3,9 @@
 import React, { useState, useEffect } from 'react';
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@/components/ui/table';
 import { Skeleton } from '@/components/ui/skeleton';
+import { Button } from '@/components/ui/button';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
+import { ChevronDown } from 'lucide-react';
 
 interface BenchmarkResult {
   agent: string;
@@ -13,16 +16,21 @@ interface BenchmarkResult {
   true_positive_rate: number;
 }
 
+type SortField = 'needle_in_haystack' | 'pr_review' | 'true_positive_rate' | 'remediated';
+
 export default function SM100Dashboard() {
   const [results, setResults] = useState<BenchmarkResult[]>([]);
+  const [sortedResults, setSortedResults] = useState<BenchmarkResult[]>([]);
   const [expandedRow, setExpandedRow] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
+  const [sortField, setSortField] = useState<SortField | null>(null);
 
   useEffect(() => {
     fetch('/results.json')
       .then(response => response.json())
       .then(data => {
         setResults(data);
+        setSortedResults(data);
         setLoading(false);
       })
       .catch(error => {
@@ -30,6 +38,32 @@ export default function SM100Dashboard() {
         setLoading(false);
       });
   }, []);
+
+  useEffect(() => {
+    if (sortField) {
+      const sorted = [...results].sort((a, b) => {
+        switch (sortField) {
+          case 'needle_in_haystack':
+            return b.needle_in_haystack.length - a.needle_in_haystack.length;
+          case 'pr_review':
+            return b.pr_review.length - a.pr_review.length;
+          case 'true_positive_rate':
+            return b.true_positive_rate - a.true_positive_rate;
+          case 'remediated':
+            return b.remediated.length - a.remediated.length;
+          default:
+            return 0;
+        }
+      });
+      setSortedResults(sorted);
+    } else {
+      setSortedResults(results);
+    }
+  }, [results, sortField]);
+
+  const handleSort = (field: SortField) => {
+    setSortField(field === sortField ? null : field);
+  };
 
   const toggleRow = (index: number) => {
     setExpandedRow(expandedRow === index ? null : index);
@@ -104,8 +138,32 @@ export default function SM100Dashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <TooltipProvider>
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Blue Banner */}
+        <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-6 mb-8">
+          <h2 className="text-2xl font-bold text-blue-900 dark:text-blue-100 mb-2">
+            Introducing SM-100
+          </h2>
+          <p className="text-blue-800 dark:text-blue-200 mb-3">
+            Just how well do software agents navigate code bases and find real bugs?
+            Introducing the SM-100 benchmark.
+          </p>
+          <p className="text-blue-700 dark:text-blue-300">
+            Learn more at our{' '}
+            <a 
+              href="https://youtube.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="underline hover:text-blue-600 dark:hover:text-blue-200"
+            >
+              AI Engineers World Fair
+            </a>{' '}
+            presentation.
+          </p>
+        </div>
+
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
             SM-100 Benchmark Results
@@ -126,21 +184,101 @@ export default function SM100Dashboard() {
                   Run Date
                 </TableHead>
                 <TableHead className="text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                  Needle in Haystack
+                  <div className="flex items-center gap-2">
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <span className="cursor-help">Needle in Haystack</span>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>The number of bugs found in the SM-100 dataset given no context</p>
+                      </TooltipContent>
+                    </Tooltip>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleSort('needle_in_haystack');
+                      }}
+                      className={`h-6 w-6 p-0 ${sortField === 'needle_in_haystack' ? 'text-blue-600 dark:text-blue-400' : ''}`}
+                    >
+                      <ChevronDown className="h-3 w-3" />
+                    </Button>
+                  </div>
                 </TableHead>
                 <TableHead className="text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                  PR Results
+                  <div className="flex items-center gap-2">
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <span className="cursor-help">PR Results</span>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>The number of bugs found given the PR/commit that introduced them</p>
+                      </TooltipContent>
+                    </Tooltip>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleSort('pr_review');
+                      }}
+                      className={`h-6 w-6 p-0 ${sortField === 'pr_review' ? 'text-blue-600 dark:text-blue-400' : ''}`}
+                    >
+                      <ChevronDown className="h-3 w-3" />
+                    </Button>
+                  </div>
                 </TableHead>
                 <TableHead className="text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                  True Positive Rate
+                  <div className="flex items-center gap-2">
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <span className="cursor-help">True Positive Rate</span>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>Percent of all reports that are valid bugs</p>
+                      </TooltipContent>
+                    </Tooltip>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleSort('true_positive_rate');
+                      }}
+                      className={`h-6 w-6 p-0 ${sortField === 'true_positive_rate' ? 'text-blue-600 dark:text-blue-400' : ''}`}
+                    >
+                      <ChevronDown className="h-3 w-3" />
+                    </Button>
+                  </div>
                 </TableHead>
                 <TableHead className="text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                  Remediated Bugs
+                  <div className="flex items-center gap-2">
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <span className="cursor-help">Remediated Bugs</span>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>The number of needle in haystack bugs that were successfully remediated</p>
+                      </TooltipContent>
+                    </Tooltip>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleSort('remediated');
+                      }}
+                      className={`h-6 w-6 p-0 ${sortField === 'remediated' ? 'text-blue-600 dark:text-blue-400' : ''}`}
+                    >
+                      <ChevronDown className="h-3 w-3" />
+                    </Button>
+                  </div>
                 </TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
-              {results.map((result, index) => (
+              {sortedResults.map((result, index) => (
                 <React.Fragment key={index}>
                   <TableRow
                     className="cursor-pointer"
@@ -236,5 +374,6 @@ export default function SM100Dashboard() {
         </div>
       </div>
     </div>
+    </TooltipProvider>
   );
 }
