@@ -64,7 +64,7 @@
     "id": "django_django_16642",
     "source": "SWEBench",
     "language": "Python",
-    "introduced_by": "(change in python stdlib)",
+    "introduced_by": null,
     "implication": "Unexpected behavior",
     "taxonomy": "Incomplete implementation",
     "severity": [
@@ -444,7 +444,7 @@
     "id": "redis_node-redis_de0a9628aabb9daecdccc898d10b375ab1b98566",
     "source": "BugsJS",
     "language": "JS",
-    "introduced_by": "v2.6.1",
+    "introduced_by": null,
     "implication": "Hang",
     "taxonomy": "Incorrect implementation",
     "severity": [
@@ -524,7 +524,7 @@
     "id": "chatchat-space_Langchain-Chatchat_4009",
     "source": "GitHub",
     "language": "TS",
-    "introduced_by": "forever",
+    "introduced_by": null,
     "implication": "Security",
     "taxonomy": null,
     "severity": [
@@ -824,7 +824,7 @@
     "id": "go-sql-driver_mysql_943",
     "source": "GitHub",
     "language": "Go",
-    "introduced_by": "(change in go stdlib)",
+    "introduced_by": null,
     "implication": "Exception",
     "taxonomy": null,
     "severity": [
@@ -1778,7 +1778,7 @@
     "id": "etesync_server_107",
     "source": "GitHub",
     "language": "Python",
-    "introduced_by": "forever",
+    "introduced_by": null,
     "implication": "Unexpected behavior",
     "taxonomy": null,
     "severity": [
@@ -1814,7 +1814,7 @@
     "id": "mediacms-io_mediacms_912",
     "source": "GitHub",
     "language": "JS",
-    "introduced_by": "forever aa6520daac705f2374d9b8b37cfb105f26106e5d",
+    "introduced_by": "aa6520daac705f2374d9b8b37cfb105f26106e5d",
     "implication": "Exception",
     "taxonomy": null,
     "severity": [
@@ -1832,7 +1832,7 @@
     "id": "mediacms-io_mediacms_388",
     "source": "GitHub",
     "language": "JS",
-    "introduced_by": "forever aa6520daac705f2374d9b8b37cfb105f26106e5d",
+    "introduced_by": "aa6520daac705f2374d9b8b37cfb105f26106e5d",
     "implication": "Unexpected behavior",
     "taxonomy": null,
     "severity": [

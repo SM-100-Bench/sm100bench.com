@@ -69,8 +69,10 @@ const StarRating = ({ rating }: { rating: number }) => {
       {[1, 2, 3].map((star) => (
         <Star
           key={star}
-          className={`w-4 h-4 text-gray-300 ${
-            star <= rating && "fill-gray-300"
+          className={`w-4 h-4 ${
+            star <= rating
+              ? "text-foreground fill-foreground"
+              : "text-secondary"
           }`}
         />
       ))}
@@ -80,7 +82,7 @@ const StarRating = ({ rating }: { rating: number }) => {
 
 const GitHubCommitLink = ({ hash, url }: { hash: string; url: string }) => {
   if (!hash || hash === "null" || typeof hash !== "string")
-    return <span className="text-gray-400">-</span>;
+    return <span className="text-muted-foreground">-</span>;
 
   // Handle special cases
   if (
@@ -89,7 +91,9 @@ const GitHubCommitLink = ({ hash, url }: { hash: string; url: string }) => {
     hash.startsWith("v")
   ) {
     return (
-      <span className="text-gray-600 text-sm">{hash.substring(0, 7)}</span>
+      <span className="text-muted-foreground text-sm">
+        {hash.substring(0, 7)}
+      </span>
     );
   }
 
@@ -97,7 +101,9 @@ const GitHubCommitLink = ({ hash, url }: { hash: string; url: string }) => {
   const urlMatch = url.match(/github\.com\/([^\/]+\/[^\/]+)/);
   if (!urlMatch)
     return (
-      <span className="text-gray-600 text-sm">{hash.substring(0, 7)}</span>
+      <span className="text-muted-foreground text-sm">
+        {hash.substring(0, 7)}
+      </span>
     );
 
   const repoPath = urlMatch[1];
@@ -108,7 +114,7 @@ const GitHubCommitLink = ({ hash, url }: { hash: string; url: string }) => {
       href={commitUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-blue-600 dark:text-blue-400 hover:underline text-sm font-mono"
+      className="text-primary hover:underline text-sm font-mono"
     >
       {hash.substring(0, 7)}
     </a>
@@ -148,9 +154,9 @@ const SliderInput = ({
             max={max}
             value={value}
             onChange={(e) => onChange(parseInt(e.target.value))}
-            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+            className="w-full h-2 bg-muted rounded-lg appearance-none cursor-pointer"
           />
-          <div className="text-xs text-gray-600 dark:text-gray-400">
+          <div className="text-xs text-muted-foreground">
             {levels[value - 1]} or higher
           </div>
         </div>
@@ -240,12 +246,12 @@ export default function DatasetViewer() {
   }, [data, filters]);
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen">
       <div className="flex">
         {/* Sidebar */}
-        <div className="w-80 min-h-screen bg-white dark:bg-gray-800 shadow-lg p-6 space-y-6">
+        <div className="w-80 min-h-screen bg-sidebar shadow-lg p-6 space-y-6">
           <div>
-            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-lg font-semibold text-foreground mb-4">
               Filters
             </h2>
 
@@ -375,13 +381,13 @@ export default function DatasetViewer() {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 min-w-0 bg-gray-50 dark:bg-gray-900">
+        <div className="flex-1 min-w-0 bg-background">
           <div className="p-8">
             <div className="mb-6">
-              <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+              <h1 className="text-3xl font-bold text-foreground mb-2">
                 Explore the SM-100 dataset
               </h1>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-muted-foreground">
                 {filteredData.length} of {data.length} entries shown
               </p>
             </div>
@@ -469,14 +475,14 @@ export default function DatasetViewer() {
                                 href={item.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-blue-600 dark:text-blue-400 hover:underline font-medium block truncate"
+                                className="text-primary hover:underline font-medium block truncate"
                                 title={item.id}
                               >
                                 {item.id}
                               </a>
                             </TableCell>
                             <TableCell className="min-w-[100px]">
-                              <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded text-sm">
+                              <span className="px-2 py-1 bg-muted rounded text-sm">
                                 {item.language}
                               </span>
                             </TableCell>
@@ -491,19 +497,19 @@ export default function DatasetViewer() {
                             <TableCell className="min-w-[160px]">
                               <div className="space-y-1">
                                 <div className="flex items-center space-x-2">
-                                  <span className="text-xs text-gray-500 w-12">
+                                  <span className="text-xs text-muted-foreground w-12">
                                     Sev:
                                   </span>
                                   <StarRating rating={avgSeverity} />
                                 </div>
                                 <div className="flex items-center space-x-2">
-                                  <span className="text-xs text-gray-500 w-12">
+                                  <span className="text-xs text-muted-foreground w-12">
                                     Exp:
                                   </span>
                                   <StarRating rating={avgDomainExpertise} />
                                 </div>
                                 <div className="flex items-center space-x-2">
-                                  <span className="text-xs text-gray-500 w-12">
+                                  <span className="text-xs text-muted-foreground w-12">
                                     Diff:
                                   </span>
                                   <StarRating rating={avgDifficultyToFind} />
@@ -516,7 +522,7 @@ export default function DatasetViewer() {
                                 url={item.url}
                               />
                             </TableCell>
-                            <TableCell className="min-w-[100px] text-sm text-gray-600 dark:text-gray-400">
+                            <TableCell className="min-w-[100px] text-sm text-muted-foreground">
                               <div className="truncate" title={item.source}>
                                 {item.source}
                               </div>

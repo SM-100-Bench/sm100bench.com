@@ -1,24 +1,32 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navigation() {
   const pathname = usePathname();
 
   const navItems = [
-    { href: '/', label: 'Results', description: 'SM-100 Benchmark Results' },
-    { href: '/dataset', label: 'Dataset', description: 'SM-100 Dataset Explorer' },
-    { href: '/about', label: 'About', description: 'About the SM-100 Benchmark' },
+    { href: "/", label: "Results", description: "SM-100 Benchmark Results" },
+    {
+      href: "/dataset",
+      label: "Dataset",
+      description: "SM-100 Dataset Explorer",
+    },
+    {
+      href: "/about",
+      label: "About",
+      description: "About the SM-100 Benchmark",
+    },
   ];
 
   return (
-    <nav className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
+    <nav className="shadow-sm border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo/Brand */}
           <div className="flex-shrink-0">
-            <Link href="/" className="text-xl font-bold text-gray-900 dark:text-white">
+            <Link href="/" className="text-xl font-bold">
               SM-100
             </Link>
           </div>
@@ -33,8 +41,8 @@ export default function Navigation() {
                   href={item.href}
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
                     isActive
-                      ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white'
-                      : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700'
+                      ? "bg-accent text-accent-foreground"
+                      : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
                   }`}
                   title={item.description}
                 >
