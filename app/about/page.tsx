@@ -20,14 +20,14 @@ export default function AboutPage() {
               What is SM-100?
             </h2>
             <p className="text-gray-700 dark:text-gray-300 mb-6">
-              SM-100 evaluates software agents across multiple dimensions including bug detection without context (needle in haystack), bug identification given specific PR/commit context, and the ability to remediate discovered issues. The benchmark measures both the quantity and quality of bug reports through true positive rate analysis.
+              SM-100 evaluates software agents across multiple dimensions including bug detection without context (needle in haystack), bug identification given specific PR/commit context, and the ability to remediate discovered issues.
             </p>
             
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
               Learn More
             </h2>
             <p className="text-gray-700 dark:text-gray-300 mb-6">
-              For a detailed overview of the SM-100 benchmark methodology and results, watch our presentation at the{' '}
+              For an overview of the SM-100 benchmark, watch our presentation at the{' '}
               <a 
                 href="https://youtube.com" 
                 target="_blank" 

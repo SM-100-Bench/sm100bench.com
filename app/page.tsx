@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@/components/ui/table';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
-import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
+import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from '@/components/ui/tooltip';
 import { ChevronDown } from 'lucide-react';
 
 interface BenchmarkResult {
@@ -75,7 +75,7 @@ export default function SM100Dashboard() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
             <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-              SM-100 Benchmark Results
+              Benchmark Results
             </h1>
             <p className="text-gray-600 dark:text-gray-400">
               Performance metrics for software engineering agents
@@ -166,7 +166,7 @@ export default function SM100Dashboard() {
 
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-            SM-100 Benchmark Results
+            Benchmark Results
           </h1>
           <p className="text-gray-600 dark:text-gray-400">
             Evaluating software engineering agents on bug detection and remediation
