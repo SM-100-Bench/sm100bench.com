@@ -111,7 +111,7 @@ export default function SM100Dashboard() {
             SM-100 Benchmark Results
           </h1>
           <p className="text-gray-600 dark:text-gray-400">
-            Performance metrics for software engineering agents
+            Evaluating software engineering agents on bug detection and remediation
           </p>
         </div>
 

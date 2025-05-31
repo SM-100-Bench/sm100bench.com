@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="border-t border-gray-800 bg-gray-950 py-6 mt-auto">
       <div className="container mx-auto px-4 text-center">
         <p className="text-sm text-gray-400">
-          Created by{" "}
+          Created by the team at{" "}
           <a
             href="https://bismuth.sh"
             target="_blank"

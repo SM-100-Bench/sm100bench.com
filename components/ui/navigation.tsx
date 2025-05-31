@@ -17,13 +17,13 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo/Brand */}
           <div className="flex-shrink-0">
-            <h1 className="text-xl font-bold text-gray-900 dark:text-white">
+            <Link href="/" className="text-xl font-bold text-gray-900 dark:text-white">
               SM-100
-            </h1>
+            </Link>
           </div>
 
           {/* Navigation Links */}
-          <div className="flex space-x-8">
+          <div className="flex space-x-4">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
               return (

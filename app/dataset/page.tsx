@@ -204,7 +204,7 @@ export default function DatasetViewer() {
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
         <div className="flex">
           {/* Sidebar */}
-          <div className="w-80 min-h-screen bg-white dark:bg-gray-800 shadow-lg p-6 space-y-6">
+          <div className="w-50 min-h-screen bg-white dark:bg-gray-800 shadow-lg p-6 space-y-6">
             <div>
               <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
                 Filters
@@ -349,7 +349,7 @@ export default function DatasetViewer() {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <div className="flex">
         {/* Sidebar */}
-        <div className="w-80 min-h-screen bg-white dark:bg-gray-800 shadow-lg p-6 space-y-6">
+        <div className="flex-0 min-h-screen bg-white dark:bg-gray-800 shadow-lg p-6 space-y-6">
           <div>
             <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
               Filters
@@ -444,10 +444,10 @@ export default function DatasetViewer() {
         <div className="flex-1 p-8">
           <div className="mb-8">
             <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-              SM-100 Dataset Explorer
+              Explore the SM-100 dataset
             </h1>
             <p className="text-gray-600 dark:text-gray-400">
-              Explore the SM-100 dataset with {filteredData.length} of {data.length} entries shown
+               {filteredData.length} of {data.length} entries shown
             </p>
           </div>
 
