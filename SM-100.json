@@ -820,6 +820,24 @@
     ]
   },
   {
+    "url": "https://github.com/grafana/mimir/pull/7965",
+    "id": "grafana_mimir_7965",
+    "source": "GitHub",
+    "language": "Go",
+    "introduced_by": null,
+    "implication": "Unexpected behavior",
+    "taxonomy": null,
+    "severity": [
+      "Low"
+    ],
+    "domain_expertise": [
+      "Medium"
+    ],
+    "difficulty_to_find": [
+      "High"
+    ]
+  },
+  {
     "url": "https://github.com/go-sql-driver/mysql/pull/943",
     "id": "go-sql-driver_mysql_943",
     "source": "GitHub",

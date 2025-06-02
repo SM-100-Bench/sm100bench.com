@@ -208,5 +208,49 @@
             "https://github.com/websockets/ws/pull/2231"
           ],
         "true_positive_rate": 0.16
+    },
+    {
+        "agent": "o3 Basic Agent",
+        "run_date": "2025-05-27",
+        "needle_in_haystack": [
+            "https://github.com/open-telemetry/opentelemetry-go/pull/2285",
+            "https://github.com/root-gg/plik/pull/518"
+        ],
+        "remediated": null,
+        "pr_review": null,
+        "true_positive_rate": 0.06
+    },
+    {
+        "agent": "Sonnet 4 Basic Agent",
+        "run_date": "2025-05-27",
+        "needle_in_haystack": [
+            "https://github.com/47ng/nuqs/pull/821",
+            "https://github.com/websockets/ws/pull/2231",
+            "https://github.com/docsifyjs/docsify/pull/1909",
+            "https://github.com/tsenart/vegeta/commit/6fbe391628eeeae1adf39522a55078797e6e7f2e",
+            "https://github.com/prevwong/craft.js/pull/131"
+        ],
+        "remediated": null,
+        "pr_review": null,
+        "true_positive_rate": 0.03
+    },
+    {
+        "agent": "DeepSeek R1 Basic Agent",
+        "run_date": "2025-05-27",
+        "needle_in_haystack": [
+            "https://github.com/ParisNeo/lollms/commit/295d4a9d00fc1b02d1359fc13794828bb56ee22d"
+        ],
+        "remediated": null,
+        "pr_review": null,
+        "true_positive_rate": 0.01
+    },
+    {
+        "agent": "Llama 4 Maverick Basic Agent",
+        "run_date": "2025-05-27",
+        "needle_in_haystack": [
+        ],
+        "remediated": null,
+        "pr_review": null,
+        "true_positive_rate": 0.02
     }
 ]
