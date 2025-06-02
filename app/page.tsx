@@ -59,13 +59,16 @@ export default function SM100Dashboard() {
       const sorted = [...results].sort((a, b) => {
         switch (sortField) {
           case "needle_in_haystack":
-            return b.needle_in_haystack.length - a.needle_in_haystack.length;
+            return (
+              (b.needle_in_haystack || []).length -
+              (a.needle_in_haystack || []).length
+            );
           case "pr_review":
-            return b.pr_review.length - a.pr_review.length;
+            return (b.pr_review || []).length - (a.pr_review || []).length;
           case "true_positive_rate":
             return b.true_positive_rate - a.true_positive_rate;
           case "remediated":
-            return b.remediated.length - a.remediated.length;
+            return (b.remediated || []).length - (a.remediated || []).length;
           default:
             return 0;
         }
@@ -281,16 +284,22 @@ export default function SM100Dashboard() {
                             {result.run_date}
                           </TableCell>
                           <TableCell className="text-foreground">
-                            {result.needle_in_haystack.length}
+                            {result.needle_in_haystack === null
+                              ? "N/A"
+                              : result.needle_in_haystack.length}
                           </TableCell>
                           <TableCell className="text-foreground">
-                            {result.pr_review.length}
+                            {result.pr_review === null
+                              ? "N/A"
+                              : result.pr_review.length}
                           </TableCell>
                           <TableCell className="text-foreground">
                             {(result.true_positive_rate * 100).toFixed(0)}%
                           </TableCell>
                           <TableCell className="text-foreground">
-                            {result.remediated.length}
+                            {result.remediated === null
+                              ? "N/A"
+                              : result.remediated.length}
                           </TableCell>
                         </TableRow>
                         {expandedRow === index && (
@@ -300,10 +309,13 @@ export default function SM100Dashboard() {
                                 <div className="flex flex-col">
                                   <h4 className="text-sm font-medium text-foreground mb-2">
                                     Needle in Haystack Results (
-                                    {result.needle_in_haystack.length})
+                                    {result.needle_in_haystack === null
+                                      ? "N/A"
+                                      : result.needle_in_haystack.length}
+                                    )
                                   </h4>
                                   <div className="flex-1 overflow-y-auto border border-border rounded-md p-2 space-y-1">
-                                    {result.needle_in_haystack.map(
+                                    {(result.needle_in_haystack || []).map(
                                       (url, urlIndex) => (
                                         <a
                                           key={urlIndex}
@@ -324,41 +336,57 @@ export default function SM100Dashboard() {
 
                                 <div className="flex flex-col">
                                   <h4 className="text-sm font-medium text-foreground mb-2">
-                                    PR Review Results ({result.pr_review.length}
+                                    PR Review Results (
+                                    {result.pr_review === null
+                                      ? "N/A"
+                                      : result.pr_review.length}
                                     )
                                   </h4>
                                   <div className="flex-1 overflow-y-auto border border-border rounded-md p-2 space-y-1">
-                                    {result.pr_review.map((url, urlIndex) => (
-                                      <a
-                                        key={urlIndex}
-                                        href={url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="block text-xs text-primary hover:underline break-all"
-                                      >
-                                        {url.replace("https://github.com/", "")}
-                                      </a>
-                                    ))}
+                                    {(result.pr_review || []).map(
+                                      (url, urlIndex) => (
+                                        <a
+                                          key={urlIndex}
+                                          href={url}
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                          className="block text-xs text-primary hover:underline break-all"
+                                        >
+                                          {url.replace(
+                                            "https://github.com/",
+                                            ""
+                                          )}
+                                        </a>
+                                      )
+                                    )}
                                   </div>
                                 </div>
 
                                 <div className="flex flex-col">
                                   <h4 className="text-sm font-medium text-foreground mb-2">
                                     Remediated Issues (
-                                    {result.remediated.length})
+                                    {result.remediated === null
+                                      ? "N/A"
+                                      : result.remediated.length}
+                                    )
                                   </h4>
                                   <div className="flex-1 overflow-y-auto border border-border rounded-md p-2 space-y-1">
-                                    {result.remediated.map((url, urlIndex) => (
-                                      <a
-                                        key={urlIndex}
-                                        href={url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="block text-xs text-primary hover:underline break-all"
-                                      >
-                                        {url.replace("https://github.com/", "")}
-                                      </a>
-                                    ))}
+                                    {(result.remediated || []).map(
+                                      (url, urlIndex) => (
+                                        <a
+                                          key={urlIndex}
+                                          href={url}
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                          className="block text-xs text-primary hover:underline break-all"
+                                        >
+                                          {url.replace(
+                                            "https://github.com/",
+                                            ""
+                                          )}
+                                        </a>
+                                      )
+                                    )}
                                   </div>
                                 </div>
                               </div>

@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SM-100 Dashboard",
+  title: "SM-100",
   description: "SM-100 Benchmark Results and Dataset Explorer",
 };
 
