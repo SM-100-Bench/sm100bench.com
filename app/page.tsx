@@ -17,7 +17,7 @@ import {
   TooltipTrigger,
   TooltipProvider,
 } from "@/components/ui/tooltip";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Medal } from "lucide-react";
 
 interface BenchmarkResult {
   agent: string;
@@ -87,12 +87,23 @@ export default function SM100Dashboard() {
     setExpandedRow(expandedRow === index ? null : index);
   };
 
+  const getMedalIcon = (index: number) => {
+    if (index === 0) {
+      return <Medal className="h-4 w-4 text-yellow-500" />; // Gold
+    } else if (index === 1) {
+      return <Medal className="h-4 w-4 text-gray-400" />; // Silver
+    } else if (index === 2) {
+      return <Medal className="h-4 w-4 text-amber-600" />; // Bronze
+    }
+    return null;
+  };
+
   return (
     <TooltipProvider>
       <div className="py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Blue Banner */}
-          <div className="bg-slate-900 border-slate-700 border border-primary/20 rounded-lg p-6 mb-8">
+          <div className="bg-card rounded-lg p-6 mb-8">
             <h2 className="text-2xl font-bold mb-2">Introducing SM-100</h2>
             <p className="mb-3">
               Just how well do software agents navigate code bases and find real
@@ -249,7 +260,7 @@ export default function SM100Dashboard() {
               </TableHeader>
               <TableBody>
                 {loading
-                  ? Array.from({ length: 5 }).map((_, index) => (
+                  ? Array.from({ length: 10 }).map((_, index) => (
                       <TableRow key={index}>
                         <TableCell className="font-medium">
                           <Skeleton className="h-4 w-24" />
@@ -278,7 +289,10 @@ export default function SM100Dashboard() {
                           onClick={() => toggleRow(index)}
                         >
                           <TableCell className="font-medium text-foreground">
-                            {result.agent}
+                            <div className="flex items-center gap-2">
+                              {getMedalIcon(index)}
+                              {result.agent}
+                            </div>
                           </TableCell>
                           <TableCell className="text-foreground">
                             {result.run_date}

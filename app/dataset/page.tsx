@@ -20,6 +20,11 @@ import { Checkbox } from "@/components/ui/checkbox";
 
 import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
+import {
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+} from "@/components/ui/tooltip";
 import { Star } from "lucide-react";
 
 interface DatasetEntry {
@@ -497,21 +502,42 @@ export default function DatasetViewer() {
                             <TableCell className="min-w-[160px]">
                               <div className="space-y-1">
                                 <div className="flex items-center space-x-2">
-                                  <span className="text-xs text-muted-foreground w-12">
-                                    Sev:
-                                  </span>
+                                  <Tooltip>
+                                    <TooltipTrigger asChild>
+                                      <span className="text-xs text-muted-foreground w-12 cursor-help">
+                                        Sev:
+                                      </span>
+                                    </TooltipTrigger>
+                                    <TooltipContent>
+                                      <p>Severity in context</p>
+                                    </TooltipContent>
+                                  </Tooltip>
                                   <StarRating rating={avgSeverity} />
                                 </div>
                                 <div className="flex items-center space-x-2">
-                                  <span className="text-xs text-muted-foreground w-12">
-                                    Exp:
-                                  </span>
+                                  <Tooltip>
+                                    <TooltipTrigger asChild>
+                                      <span className="text-xs text-muted-foreground w-12 cursor-help">
+                                        Exp:
+                                      </span>
+                                    </TooltipTrigger>
+                                    <TooltipContent>
+                                      <p>Domain expertise required to find</p>
+                                    </TooltipContent>
+                                  </Tooltip>
                                   <StarRating rating={avgDomainExpertise} />
                                 </div>
                                 <div className="flex items-center space-x-2">
-                                  <span className="text-xs text-muted-foreground w-12">
-                                    Diff:
-                                  </span>
+                                  <Tooltip>
+                                    <TooltipTrigger asChild>
+                                      <span className="text-xs text-muted-foreground w-12 cursor-help">
+                                        Diff:
+                                      </span>
+                                    </TooltipTrigger>
+                                    <TooltipContent>
+                                      <p>Difficulty to find</p>
+                                    </TooltipContent>
+                                  </Tooltip>
                                   <StarRating rating={avgDifficultyToFind} />
                                 </div>
                               </div>

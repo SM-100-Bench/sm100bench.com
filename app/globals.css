@@ -79,31 +79,47 @@
 }
 
 .dark {
-  --background: theme(colors.slate.950);
-  --foreground: theme(colors.slate.50);
-  --card: theme(colors.slate.950);
-  --card-foreground: theme(colors.slate.50);
-  --popover: theme(colors.slate.950);
-  --popover-foreground: theme(colors.slate.50);
-  --primary: theme(colors.slate.50);
-  --primary-foreground: theme(colors.slate.900);
-  --secondary: theme(colors.slate.800);
-  --secondary-foreground: theme(colors.slate.50);
-  --muted: theme(colors.slate.800);
-  --muted-foreground: theme(colors.slate.400);
-  --accent: theme(colors.slate.800);
-  --accent-foreground: theme(colors.slate.50);
-  --destructive: theme(colors.red.900);
-  --border: theme(colors.slate.800);
-  --input: theme(colors.slate.800);
-  --ring: theme(colors.slate.300);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: theme(colors.slate.900);
-  --sidebar-foreground: theme(colors.slate.50);
+  /* "Dark Apple" style palette */
+  --background: hsl(220 15% 12%); /* Dark desaturated gray-blue */
+  --foreground: hsl(210 20% 95%); /* Soft light gray / Off-white */
+
+  --card: hsl(220 15% 17%);            /* Slightly lighter than background */
+  --card-foreground: hsl(210 20% 95%); /* Same as main foreground */
+
+  --popover: hsl(220 15% 15%);          /* Similar to card, or slightly darker */
+  --popover-foreground: hsl(210 20% 95%);
+
+  /* Primary for interactive elements (e.g., buttons) */
+  --primary: hsl(210 100% 56%);        /* Vibrant blue */
+  --primary-foreground: hsl(210 40% 98%); /* White/light gray text for blue buttons */
+
+  /* Secondary for less prominent elements */
+  --secondary: hsl(220 15% 25%);       /* A medium-dark gray */
+  --secondary-foreground: hsl(210 20% 90%); /* Slightly darker text for secondary elements if needed */
+
+  /* Muted for subtle text or AI message bubbles */
+  --muted: hsl(220 15% 22%);           /* A gray distinct from user messages & card, lighter than darkest bg */
+  --muted-foreground: hsl(210 15% 70%); /* Softer gray text */
+
+  /* Accent for highlights if needed, can be same as primary or a different color */
+  --accent: hsl(210 100% 56%);         /* Using primary blue as accent */
+  --accent-foreground: hsl(210 40% 98%);
+
+  --destructive: hsl(0 70% 55%);         /* A clear red for destructive actions */
+  --destructive-foreground: hsl(0 0% 100%);
+
+  --border: hsl(220 15% 18%);          /* Border almost same as card bg for minimal outline */
+  --input: hsl(220 15% 23%);           /* Input field background, made slightly lighter */
+  --ring: hsl(210 90% 65%);            /* Focus ring - a lighter shade of primary blue */
+  /* Charts - can be updated if charts are used, for now keep or use a new scheme */
+  --chart-1: hsl(220 70% 50%);
+  --chart-2: hsl(160 60% 45%);
+  --chart-3: hsl(30 80% 55%);
+  --chart-4: hsl(280 65% 60%);
+  --chart-5: hsl(340 75% 55%);
+  
+  --sidebar: hsl(220 15% 17%);
+  --sidebar-foreground: hsl(210 20% 95%);
   --sidebar-primary: theme(colors.blue.600);
   --sidebar-primary-foreground: theme(colors.slate.50);
   --sidebar-accent: theme(colors.slate.800);
