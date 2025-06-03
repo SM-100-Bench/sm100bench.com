@@ -402,7 +402,7 @@ export default function SM100Dashboard() {
 
           {/* PR Review Table */}
           <div className="mt-8">
-            <h2 className="text-2xl font-bold mb-4">PR Review Results</h2>
+            <h2 className="text-lg font-bold mb-4">PR Review Results</h2>
             <div className="text-muted-foreground mb-4">
               <p>
                 Out of the 100 problems in the dataset, 80 were identified to
