@@ -17,7 +17,7 @@ import {
   TooltipTrigger,
   TooltipProvider,
 } from "@/components/ui/tooltip";
-import { ChevronDown, Medal } from "lucide-react";
+import { ChevronDown, CircleHelp, Medal } from "lucide-react";
 
 interface BenchmarkResult {
   agent: string;
@@ -153,6 +153,11 @@ export default function SM100Dashboard() {
                   agents review the PR or commit that introduced the bug.
                 </li>
               </ul>
+              <p className="mt-2">
+                All results are pass@1 as we believe these systems should be
+                single, comprehensive tools, and users running them multiple
+                times is not representative of real-world usage.
+              </p>
             </div>
 
             <h1 className="text-2xl font-bold text-foreground mb-2 mt-4">
@@ -187,19 +192,7 @@ export default function SM100Dashboard() {
                   </TableHead>
                   <TableHead className="text-left text-xs font-medium uppercase tracking-wider">
                     <div className="flex items-center gap-2">
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <span className="cursor-help">
-                            Needle in Haystack
-                          </span>
-                        </TooltipTrigger>
-                        <TooltipContent>
-                          <p>
-                            The number of bugs found in the SM-100 dataset given
-                            no context
-                          </p>
-                        </TooltipContent>
-                      </Tooltip>
+                      Needle in Haystack
                       <Button
                         variant="ghost"
                         size="sm"
@@ -219,19 +212,7 @@ export default function SM100Dashboard() {
                   </TableHead>
                   <TableHead className="text-left text-xs font-medium uppercase tracking-wider">
                     <div className="flex items-center gap-2">
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <span className="cursor-help">
-                            True Positive Rate
-                          </span>
-                        </TooltipTrigger>
-                        <TooltipContent>
-                          <p>
-                            Percent of all reports that are valid bugs (/total
-                            number of bugs reported)
-                          </p>
-                        </TooltipContent>
-                      </Tooltip>
+                      True Positive Rate
                       <Button
                         variant="ghost"
                         size="sm"
@@ -251,17 +232,7 @@ export default function SM100Dashboard() {
                   </TableHead>
                   <TableHead className="text-left text-xs font-medium uppercase tracking-wider">
                     <div className="flex items-center gap-2">
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <span className="cursor-help">Remediated Bugs</span>
-                        </TooltipTrigger>
-                        <TooltipContent>
-                          <p>
-                            The number of needle in haystack bugs that were
-                            successfully remediated
-                          </p>
-                        </TooltipContent>
-                      </Tooltip>
+                      Remediated Bugs
                       <Button
                         variant="ghost"
                         size="sm"
@@ -283,12 +254,15 @@ export default function SM100Dashboard() {
                     <div className="flex items-center gap-2">
                       <Tooltip>
                         <TooltipTrigger asChild>
-                          <span className="cursor-help">PR Results</span>
+                          <div className="flex items-center gap-1 cursor-help">
+                            <span>PR Review</span>
+                            <CircleHelp className="h-3 w-3 text-muted-foreground" />
+                          </div>
                         </TooltipTrigger>
                         <TooltipContent>
                           <p>
                             The number of bugs found given the PR or commit that
-                            introduced them
+                            introduced them (out of 80)
                           </p>
                         </TooltipContent>
                       </Tooltip>
@@ -412,34 +386,6 @@ export default function SM100Dashboard() {
 
                                 <div className="flex flex-col">
                                   <h4 className="text-sm font-medium text-foreground mb-2">
-                                    PR Review Results (
-                                    {result.pr_review === null
-                                      ? "N/A"
-                                      : result.pr_review.length}
-                                    )
-                                  </h4>
-                                  <div className="flex-1 overflow-y-auto border border-border rounded-md p-2 space-y-1">
-                                    {(result.pr_review || []).map(
-                                      (url, urlIndex) => (
-                                        <a
-                                          key={urlIndex}
-                                          href={url}
-                                          target="_blank"
-                                          rel="noopener noreferrer"
-                                          className="block text-xs text-primary hover:underline break-all"
-                                        >
-                                          {url.replace(
-                                            "https://github.com/",
-                                            ""
-                                          )}
-                                        </a>
-                                      )
-                                    )}
-                                  </div>
-                                </div>
-
-                                <div className="flex flex-col">
-                                  <h4 className="text-sm font-medium text-foreground mb-2">
                                     Remediated Issues (
                                     {result.remediated === null
                                       ? "N/A"
@@ -465,6 +411,34 @@ export default function SM100Dashboard() {
                                     )}
                                   </div>
                                 </div>
+
+                                <div className="flex flex-col">
+                                  <h4 className="text-sm font-medium text-foreground mb-2">
+                                    PR Review Results (
+                                    {result.pr_review === null
+                                      ? "N/A"
+                                      : result.pr_review.length}
+                                    )
+                                  </h4>
+                                  <div className="flex-1 overflow-y-auto border border-border rounded-md p-2 space-y-1">
+                                    {(result.pr_review || []).map(
+                                      (url, urlIndex) => (
+                                        <a
+                                          key={urlIndex}
+                                          href={url}
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                          className="block text-xs text-primary hover:underline break-all"
+                                        >
+                                          {url.replace(
+                                            "https://github.com/",
+                                            ""
+                                          )}
+                                        </a>
+                                      )
+                                    )}
+                                  </div>
+                                </div>
                               </div>
                             </TableCell>
                           </TableRow>
@@ -473,6 +447,12 @@ export default function SM100Dashboard() {
                     ))}
               </TableBody>
             </Table>
+          </div>
+
+          <div className="mt-4 p-3 bg-muted/30 border border-muted rounded-md">
+            <p className="text-sm text-muted-foreground">
+              💡 Click on any row to expand and see detailed results
+            </p>
           </div>
         </div>
       </div>
