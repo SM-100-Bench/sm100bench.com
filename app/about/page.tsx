@@ -37,7 +37,7 @@ export default function AboutPage() {
               For an overview of the SM-100 benchmark, watch our presentation at
               the{" "}
               <a
-                href="https://youtube.com"
+                href="https://www.youtube.com/watch?v=wAQK7O3WGEE"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary hover:underline"

@@ -130,7 +130,7 @@ export default function SM100Dashboard() {
             <p>
               Learn more at our{" "}
               <a
-                href="https://youtube.com"
+                href="https://www.youtube.com/watch?v=wAQK7O3WGEE"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline hover:text-primary"
