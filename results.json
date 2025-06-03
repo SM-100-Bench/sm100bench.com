@@ -45,7 +45,7 @@
             "https://github.com/websockets/ws/pull/2231",
             "https://github.com/zotero/reader/commit/9857a5960d6a6697332c905057434904df54df9d"
         ],
-        "true_positive_rate": 0.25,
+        "true_positive_rate": 0.24,
         "total_bugs": 512
     },
     {
