@@ -406,8 +406,9 @@ export default function SM100Dashboard() {
             <div className="text-muted-foreground mb-4">
               <p>
                 Out of the 100 problems in the dataset, 80 were identified to
-                have a single specific "introduction" commit. For these, agents
-                were asked to review the PR or commit diff for issues.
+                have a single specific &quot;introduction&quot; commit. For
+                these, agents were asked to review the PR or commit diff for
+                issues.
               </p>
               <p>
                 Given the reduced area to examine and the inclusion of nearly
