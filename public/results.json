@@ -45,7 +45,8 @@
             "https://github.com/websockets/ws/pull/2231",
             "https://github.com/zotero/reader/commit/9857a5960d6a6697332c905057434904df54df9d"
         ],
-        "true_positive_rate": 0.25
+        "true_positive_rate": 0.25,
+        "total_bugs": 512
     },
     {
         "agent": "OpenAI Codex",
@@ -93,7 +94,8 @@
             "https://github.com/zotero/reader/commit/9857a5960d6a6697332c905057434904df54df9d",
             "https://github.com/zulip/zulip/commit/751b2a03e565e9eb02ffe923b7c24ac73d604034"
           ],
-        "true_positive_rate": 0.46
+        "true_positive_rate": 0.46,
+        "total_bugs": 298
     },
     {
         "agent": "Devin",
@@ -134,7 +136,8 @@
             "https://github.com/websockets/ws/pull/2231",
             "https://github.com/zotero/reader/commit/9857a5960d6a6697332c905057434904df54df9d"
           ],
-        "true_positive_rate": 0.1
+        "true_positive_rate": 0.1,
+        "total_bugs": 1233
     },
     {
         "agent": "Cursor Agent",
@@ -169,7 +172,8 @@
             "https://github.com/websockets/ws/pull/2231",
             "https://github.com/zotero/reader/commit/9857a5960d6a6697332c905057434904df54df9d"
           ],
-        "true_positive_rate": 0.03
+        "true_positive_rate": 0.03,
+        "total_bugs": 1318
     },
     {
         "agent": "Claude Code",
@@ -207,7 +211,8 @@
             "https://github.com/sinonjs/sinon/pull/2407",
             "https://github.com/websockets/ws/pull/2231"
           ],
-        "true_positive_rate": 0.16
+        "true_positive_rate": 0.16,
+        "total_bugs": 814
     },
     {
         "agent": "o3 Basic Agent",
@@ -218,7 +223,8 @@
         ],
         "remediated": null,
         "pr_review": null,
-        "true_positive_rate": 0.06
+        "true_positive_rate": 0.06,
+        "total_bugs": 145
     },
     {
         "agent": "Sonnet 4 Basic Agent",
@@ -232,7 +238,8 @@
         ],
         "remediated": null,
         "pr_review": null,
-        "true_positive_rate": 0.03
+        "true_positive_rate": 0.03,
+        "total_bugs": 1215
     },
     {
         "agent": "DeepSeek R1 Basic Agent",
@@ -242,7 +249,8 @@
         ],
         "remediated": null,
         "pr_review": null,
-        "true_positive_rate": 0.01
+        "true_positive_rate": 0.01,
+        "total_bugs": 109
     },
     {
         "agent": "Llama 4 Maverick Basic Agent",
@@ -251,6 +259,7 @@
         ],
         "remediated": null,
         "pr_review": null,
-        "true_positive_rate": 0.02
+        "true_positive_rate": 0.02,
+        "total_bugs": 88
     }
 ]

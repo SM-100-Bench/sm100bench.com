@@ -17,7 +17,7 @@ export default function AboutPage() {
               designed to assess how well software agents can navigate complex
               codebases and identify real bugs. This benchmark provides a
               standardized way to measure the effectiveness of AI-powered
-              software engineering tools in practical, real-world scenarios.
+              software engineering tools in real-world code bases.
             </p>
 
             <h2 className="text-2xl font-semibold text-foreground mb-4">
