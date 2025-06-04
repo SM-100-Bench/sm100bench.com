@@ -127,17 +127,29 @@ export default function SM100Dashboard() {
               Just how well do software agents navigate code bases and find real
               bugs?
             </p>
-            <p>
+            <p className="mb-3">
               Learn more at our{" "}
               <a
                 href="https://www.youtube.com/watch?v=wAQK7O3WGEE"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline hover:text-primary"
+                className="text-primary hover:text-primary/80 underline"
               >
                 AI Engineers World Fair
               </a>{" "}
               presentation.
+            </p>
+            <p>
+              Created by the team at{" "}
+              <a
+                href="https://bismuth.sh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:text-primary/80 underline"
+              >
+                Bismuth
+              </a>
+              . Check us out!
             </p>
           </div>
 
