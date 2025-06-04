@@ -1,12 +1,41 @@
-"use client"
+"use client";
 
-import * as React from "react"
+import * as React from "react";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 function Table({ className, ...props }: React.ComponentProps<"table">) {
+  const containerRef = React.useRef<HTMLDivElement>(null);
+  const [showGradient, setShowGradient] = React.useState(false);
+
+  React.useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const checkScroll = () => {
+      const { scrollLeft } = container;
+      console.log(scrollLeft);
+      setShowGradient(scrollLeft == 0);
+    };
+
+    // Check initially
+    checkScroll();
+
+    // Add scroll listener
+    container.addEventListener("scroll", checkScroll);
+
+    // Add resize listener to recheck when window resizes
+    window.addEventListener("resize", checkScroll);
+
+    return () => {
+      container.removeEventListener("scroll", checkScroll);
+      window.removeEventListener("resize", checkScroll);
+    };
+  }, [containerRef]);
+
   return (
     <div
+      ref={containerRef}
       data-slot="table-container"
       className="relative w-full overflow-x-auto"
     >
@@ -15,8 +44,12 @@ function Table({ className, ...props }: React.ComponentProps<"table">) {
         className={cn("w-full caption-bottom text-sm", className)}
         {...props}
       />
+      {/* Gradient overlay for mobile scroll indicator */}
+      {showGradient && (
+        <div className="absolute top-0 right-0 bottom-0 w-8 pointer-events-none bg-gradient-to-l from-secondary/30 to-transparent md:hidden z-10" />
+      )}
     </div>
-  )
+  );
 }
 
 function TableHeader({ className, ...props }: React.ComponentProps<"thead">) {
@@ -26,7 +59,7 @@ function TableHeader({ className, ...props }: React.ComponentProps<"thead">) {
       className={cn("[&_tr]:border-b", className)}
       {...props}
     />
-  )
+  );
 }
 
 function TableBody({ className, ...props }: React.ComponentProps<"tbody">) {
@@ -36,7 +69,7 @@ function TableBody({ className, ...props }: React.ComponentProps<"tbody">) {
       className={cn("[&_tr:last-child]:border-0", className)}
       {...props}
     />
-  )
+  );
 }
 
 function TableFooter({ className, ...props }: React.ComponentProps<"tfoot">) {
@@ -49,7 +82,7 @@ function TableFooter({ className, ...props }: React.ComponentProps<"tfoot">) {
       )}
       {...props}
     />
-  )
+  );
 }
 
 function TableRow({ className, ...props }: React.ComponentProps<"tr">) {
@@ -62,7 +95,7 @@ function TableRow({ className, ...props }: React.ComponentProps<"tr">) {
       )}
       {...props}
     />
-  )
+  );
 }
 
 function TableHead({ className, ...props }: React.ComponentProps<"th">) {
@@ -75,7 +108,7 @@ function TableHead({ className, ...props }: React.ComponentProps<"th">) {
       )}
       {...props}
     />
-  )
+  );
 }
 
 function TableCell({ className, ...props }: React.ComponentProps<"td">) {
@@ -88,7 +121,7 @@ function TableCell({ className, ...props }: React.ComponentProps<"td">) {
       )}
       {...props}
     />
-  )
+  );
 }
 
 function TableCaption({
@@ -101,7 +134,7 @@ function TableCaption({
       className={cn("text-muted-foreground mt-4 text-sm", className)}
       {...props}
     />
-  )
+  );
 }
 
 export {
@@ -113,4 +146,4 @@ export {
   TableRow,
   TableCell,
   TableCaption,
-}
+};

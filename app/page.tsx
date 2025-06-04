@@ -197,7 +197,7 @@ export default function SM100Dashboard() {
             </div>
           </div>
 
-          <div className="shadow-lg rounded-lg overflow-hidden">
+          <div className="shadow-lg rounded-lg">
             <Table>
               <TableHeader>
                 <TableRow>
@@ -417,7 +417,7 @@ export default function SM100Dashboard() {
                 discovery rates across the board.
               </p>
             </div>
-            <div className="shadow-lg rounded-lg overflow-hidden">
+            <div className="shadow-lg rounded-lg">
               <Table>
                 <TableHeader>
                   <TableRow>
