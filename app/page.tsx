@@ -37,7 +37,9 @@ export default function SM100Dashboard() {
   const [expandedPRRow, setExpandedPRRow] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
   const [sortField, setSortField] = useState<SortField>("needle_in_haystack");
-  const [prSortField, setPRSortField] = useState<PRSortField>("pr_review");
+  const [prSortField, setPRSortField] = useState<PRSortField>(
+    "pr_review_true_positive_rate"
+  );
 
   useEffect(() => {
     fetch("/results.json")
