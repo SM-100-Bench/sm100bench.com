@@ -46,7 +46,8 @@
             "https://github.com/zotero/reader/commit/9857a5960d6a6697332c905057434904df54df9d"
         ],
         "true_positive_rate": 0.24,
-        "total_bugs": 512
+        "total_bugs": 512,
+        "pr_review_true_positive_rate": 0.45
     },
     {
         "agent": "OpenAI Codex",
@@ -95,7 +96,8 @@
             "https://github.com/zulip/zulip/commit/751b2a03e565e9eb02ffe923b7c24ac73d604034"
           ],
         "true_positive_rate": 0.46,
-        "total_bugs": 298
+        "total_bugs": 298,
+        "pr_review_true_positive_rate": 0.62
     },
     {
         "agent": "Devin",
@@ -137,7 +139,8 @@
             "https://github.com/zotero/reader/commit/9857a5960d6a6697332c905057434904df54df9d"
           ],
         "true_positive_rate": 0.1,
-        "total_bugs": 1233
+        "total_bugs": 1233,
+        "pr_review_true_positive_rate": 0.19
     },
     {
         "agent": "Cursor Agent",
@@ -173,7 +176,8 @@
             "https://github.com/zotero/reader/commit/9857a5960d6a6697332c905057434904df54df9d"
           ],
         "true_positive_rate": 0.03,
-        "total_bugs": 1318
+        "total_bugs": 1318,
+        "pr_review_true_positive_rate": 0.15
     },
     {
         "agent": "Claude Code",
@@ -212,7 +216,8 @@
             "https://github.com/websockets/ws/pull/2231"
           ],
         "true_positive_rate": 0.16,
-        "total_bugs": 814
+        "total_bugs": 814,
+        "pr_review_true_positive_rate": 0.37
     },
     {
         "agent": "o3 Basic Agent",
