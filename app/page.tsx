@@ -17,9 +17,9 @@ import { ChevronDown, Medal } from "lucide-react";
 interface BenchmarkResult {
   agent: string;
   run_date: string;
-  needle_in_haystack: string[];
-  remediated: string[];
-  pr_review: string[];
+  needle_in_haystack: string[] | null;
+  remediated: string[] | null;
+  pr_review: string[] | null;
   true_positive_rate: number;
   total_bugs: number;
   pr_review_true_positive_rate?: number;
@@ -55,21 +55,23 @@ export default function SM100Dashboard() {
   }, []);
 
   useEffect(() => {
-    const sorted = [...results].sort((a, b) => {
-      switch (sortField) {
-        case "needle_in_haystack":
-          return (
-            (b.needle_in_haystack || []).length -
-            (a.needle_in_haystack || []).length
-          );
-        case "true_positive_rate":
-          return b.true_positive_rate - a.true_positive_rate;
-        case "remediated":
-          return (b.remediated || []).length - (a.remediated || []).length;
-        default:
-          return 0;
-      }
-    });
+    const sorted = [...results]
+      .filter((item) => item.needle_in_haystack !== null)
+      .sort((a, b) => {
+        switch (sortField) {
+          case "needle_in_haystack":
+            return (
+              (b.needle_in_haystack || []).length -
+              (a.needle_in_haystack || []).length
+            );
+          case "true_positive_rate":
+            return b.true_positive_rate - a.true_positive_rate;
+          case "remediated":
+            return (b.remediated || []).length - (a.remediated || []).length;
+          default:
+            return 0;
+        }
+      });
     setSortedResults(sorted);
   }, [results, sortField]);
 
