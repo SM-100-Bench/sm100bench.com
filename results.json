@@ -266,5 +266,23 @@
         "pr_review": null,
         "true_positive_rate": 0.02,
         "total_bugs": 88
+    },
+    {
+        "agent": "CodeRabbit",
+        "run_date": "2025-06-19",
+        "needle_in_haystack": null,
+        "remediated": null,
+        "pr_review": [
+            "https://github.com/nats-io/nats-server/pull/1792",
+            "https://github.com/curlconverter/curlconverter/commit/982cf32cefc95b7b08319205a85364174db11962",
+            "https://github.com/pocketbase/pocketbase/commit/c862ac6e45b2ef5351e048a2eeecb3687938b054",
+            "https://github.com/tsenart/vegeta/commit/6fbe391628eeeae1adf39522a55078797e6e7f2e",
+            "https://github.com/mgechev/revive/pull/1101",
+            "https://github.com/wandb/weave/pull/1657",
+            "https://github.com/ParisNeo/lollms/commit/295d4a9d00fc1b02d1359fc13794828bb56ee22d",
+            "https://github.com/47ng/nuqs/pull/821"
+        ],
+        "true_positive_rate": 0.0,
+        "total_bugs": 0
     }
 ]
